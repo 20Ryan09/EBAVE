@@ -1,12 +1,32 @@
-document.getElementById('login-form')?.addEventListener('submit', (event) => {
+document.getElementById('login-form')?.addEventListener('submit', async (event) => {
   event.preventDefault();
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
 
-  // TODO: Connect to AWS Cognito for real login
-  console.log(`Logging in with Email: ${email}, Password: ${password}`);
-  alert('Login functionality coming soon!');
+  const identifier = document.getElementById('loginIdentifier').value;
+  const password = document.getElementById('loginPassword').value;
+
+  try {
+    const response = await fetch('https://your-api-endpoint/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ identifier, password }),
+    });
+
+    if (!response.ok) {
+      const data = await response.json();
+      if (data.error === 'invalid_credentials') {
+        document.getElementById('login-error').textContent =
+          'Your username/email or password is incorrect.';
+        document.getElementById('login-error').style.display = 'block';
+      }
+    } else {
+      alert('Login successful! Redirecting...');
+      window.location.href = '/dashboard.html';
+    }
+  } catch (error) {
+    console.error('Error during login:', error);
+  }
 });
+
 
 document.getElementById('signup-form')?.addEventListener('submit', async (event) => {
   event.preventDefault();
