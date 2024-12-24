@@ -8,13 +8,35 @@ document.getElementById('login-form')?.addEventListener('submit', (event) => {
   alert('Login functionality coming soon!');
 });
 
-document.getElementById('signup-form')?.addEventListener('submit', (event) => {
+document.getElementById('signup-form')?.addEventListener('submit', async (event) => {
   event.preventDefault();
-  const name = document.getElementById('name').value;
+
+  const firstName = document.getElementById('firstName').value;
+  const lastName = document.getElementById('lastName').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
-  // TODO: Connect to AWS Cognito for real signup
-  console.log(`Signing up with Name: ${name}, Email: ${email}, Password: ${password}`);
-  alert('Sign-up functionality coming soon!');
+  const user = { firstName, lastName, email, password };
+
+  // Call backend to create the user
+  try {
+    const response = await fetch('https://your-api-endpoint/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(user),
+    });
+
+    if (!response.ok) {
+      const data = await response.json();
+      if (data.error === 'email_exists') {
+        document.getElementById('signup-error').textContent = 'This email is already in use.';
+        document.getElementById('signup-error').style.display = 'block';
+      }
+    } else {
+      alert('Signup successful! Redirecting to login...');
+      window.location.href = '/login.html';
+    }
+  } catch (error) {
+    console.error('Error during signup:', error);
+  }
 });
