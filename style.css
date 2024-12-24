@@ -1,35 +1,78 @@
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-}
-
-header {
-  background: #4CAF50;
-  color: white;
-  padding: 10px;
-}
-
-nav ul {
-  list-style: none;
   display: flex;
-  justify-content: space-around;
-  padding: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-nav a {
+/* Login Page Styling */
+.login-page, .signup-page {
+  background: linear-gradient(135deg, #ff9900, #0073e6);
   color: white;
+}
+
+.login-container, .signup-container {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  color: #0073e6;
+}
+
+p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+form {
+  margin: 1rem 0;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005bb5;
+}
+
+.signup-link, .login-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.signup-link a, .login-link a {
+  color: #0073e6;
   text-decoration: none;
 }
 
-main {
-  padding: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-  }
+.signup-link a:hover, .login-link a:hover {
+  text-decoration: underline;
 }
