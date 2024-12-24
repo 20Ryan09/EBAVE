@@ -19,30 +19,6 @@ body {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-#form-container {
-  text-align: center;
-}
-
-#form-toggle {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-#form-toggle button {
-  background: none;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-size: 1rem;
-  color: #333;
-  border-bottom: 2px solid transparent;
-}
-
-#form-toggle .active {
-  border-bottom: 2px solid #ff7e5f;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -72,5 +48,10 @@ button:hover {
 
 .link {
   color: #ff7e5f;
+  text-decoration: none;
   cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
