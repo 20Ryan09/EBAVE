@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  background: linear-gradient(to right, #0288d1, #ff9800); /* Blue to orange gradient */
   color: #fff;
   display: flex;
   justify-content: center;
@@ -10,7 +10,7 @@ body {
 }
 
 #container {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
   color: #333;
   padding: 2rem;
   border-radius: 10px;
@@ -27,13 +27,18 @@ form {
 
 input {
   padding: 0.5rem;
-  border: 1px solid #ccc;
+  border: 1px solid #0288d1; /* Blue border */
   border-radius: 5px;
   font-size: 1rem;
 }
 
+input:focus {
+  outline: none;
+  border-color: #ff9800; /* Orange focus */
+}
+
 button {
-  background-color: #ff7e5f;
+  background-color: #0288d1; /* Blue background */
   border: none;
   padding: 0.75rem;
   border-radius: 5px;
@@ -43,11 +48,11 @@ button {
 }
 
 button:hover {
-  background-color: #feb47b;
+  background-color: #ff9800; /* Orange on hover */
 }
 
 .link {
-  color: #ff7e5f;
+  color: #0288d1; /* Blue links */
   text-decoration: none;
   cursor: pointer;
 }
