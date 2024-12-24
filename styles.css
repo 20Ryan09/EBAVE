@@ -76,13 +76,6 @@ button:hover {
 .signup-link a:hover, .login-link a:hover {
   text-decoration: underline;
 }
-#signup-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
 form {
   display: flex;
