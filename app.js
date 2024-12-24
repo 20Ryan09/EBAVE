@@ -1,30 +1,20 @@
-import Amplify from 'aws-amplify';
-import awsExports from './aws-exports';
-Amplify.configure(awsExports);
+document.getElementById('login-form')?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
 
-const app = document.getElementById('app');
-
-// Load initial page
-document.getElementById('home').addEventListener('click', () => {
-  app.innerHTML = `<h2>Welcome to EBAVE App</h2>`;
+  // TODO: Connect to AWS Cognito for real login
+  console.log(`Logging in with Email: ${email}, Password: ${password}`);
+  alert('Login functionality coming soon!');
 });
 
-document.getElementById('meetings').addEventListener('click', () => {
-  app.innerHTML = `
-    <h2>Meetings</h2>
-    <ul>
-      <li>March 18, 2024 - Hosted by John</li>
-      <li>April 15, 2024 - Hosted by Jane</li>
-    </ul>`;
-});
+document.getElementById('signup-form')?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
 
-document.getElementById('contributions').addEventListener('click', () => {
-  app.innerHTML = `
-    <h2>Contributions</h2>
-    <p>John: $100</p>
-    <p>Jane: $150</p>`;
-});
-
-document.getElementById('logout').addEventListener('click', () => {
-  app.innerHTML = `<h2>You have logged out.</h2>`;
+  // TODO: Connect to AWS Cognito for real signup
+  console.log(`Signing up with Name: ${name}, Email: ${email}, Password: ${password}`);
+  alert('Sign-up functionality coming soon!');
 });
