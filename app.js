@@ -1,27 +1,4 @@
-// Switch between Login and Signup forms
-document.getElementById("login-toggle").addEventListener("click", () => {
-  document.getElementById("login-form").style.display = "block";
-  document.getElementById("signup-form").style.display = "none";
-  document.getElementById("login-toggle").classList.add("active");
-  document.getElementById("signup-toggle").classList.remove("active");
-});
-
-document.getElementById("signup-toggle").addEventListener("click", () => {
-  document.getElementById("signup-form").style.display = "block";
-  document.getElementById("login-form").style.display = "none";
-  document.getElementById("signup-toggle").classList.add("active");
-  document.getElementById("login-toggle").classList.remove("active");
-});
-
-document.getElementById("switch-to-signup")?.addEventListener("click", () => {
-  document.getElementById("signup-toggle").click();
-});
-
-document.getElementById("switch-to-login")?.addEventListener("click", () => {
-  document.getElementById("login-toggle").click();
-});
-
-// Submit Login Form
+// Login Form Submission
 document.getElementById("login-form")?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -38,18 +15,18 @@ document.getElementById("login-form")?.addEventListener("submit", async (event) 
     if (!response.ok) {
       const data = await response.json();
       document.getElementById("login-error").textContent =
-        data.error || "An error occurred. Please try again.";
+        data.error || "Your username/email or password is incorrect.";
       document.getElementById("login-error").style.display = "block";
     } else {
       alert("Login successful!");
-      window.location.href = "/dashboard.html";
+      window.location.href = "/dashboard.html"; // Replace with your dashboard URL
     }
   } catch (error) {
     console.error("Login error:", error);
   }
 });
 
-// Submit Signup Form
+// Signup Form Submission
 document.getElementById("signup-form")?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -68,11 +45,11 @@ document.getElementById("signup-form")?.addEventListener("submit", async (event)
     if (!response.ok) {
       const data = await response.json();
       document.getElementById("signup-error").textContent =
-        data.error || "An error occurred. Please try again.";
+        data.error || "This email is already in use.";
       document.getElementById("signup-error").style.display = "block";
     } else {
       alert("Signup successful! Please log in.");
-      document.getElementById("login-toggle").click();
+      window.location.href = "login.html";
     }
   } catch (error) {
     console.error("Signup error:", error);
