@@ -7,16 +7,15 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="login-page">
-  <div class="login-container">
-    <h1>Welcome to EBAVE</h1>
-    <p>Login to continue</p>
-    <form id="login-form">
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="password" id="password" placeholder="Password" required>
-      <button type="submit">Login</button>
-    </form>
-    <p class="signup-link">Don't have an account? <a href="signup.html">Create one!</a></p>
-  </div>
+  <div id="login-container">
+  <h2>Login</h2>
+  <form id="login-form">
+    <input type="text" id="loginIdentifier" placeholder="Email or First Name" required />
+    <input type="password" id="loginPassword" placeholder="Password" required />
+    <button type="submit">Log In</button>
+    <p id="login-error" style="color: red; display: none;"></p>
+  </form>
+</div>
   <script src="app.js"></script>
 </body>
 </html>
