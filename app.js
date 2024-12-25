@@ -40,7 +40,7 @@ document.getElementById("signup-form")?.addEventListener("submit", async (event)
 
   try {
     // Sending data to API
-    const response = await fetch("https://your-signup-api-endpoint", {
+    const response = await fetch("https://c1dao9b003.execute-api.us-west-1.amazonaws.com/prod/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ firstName, lastName, email, password }),
