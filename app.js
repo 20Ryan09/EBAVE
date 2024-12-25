@@ -32,31 +32,35 @@ document.getElementById("login-form")?.addEventListener("submit", async (event) 
 document.getElementById("signup-form")?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const firstName = document.getElementById("firstName").value;
-  const lastName = document.getElementById("lastName").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  // Fetching input values
+  const firstName = document.getElementById("firstName").value.trim();
+  const lastName = document.getElementById("lastName").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
 
   try {
-    const response = await fetch("https://c1dao9b003.execute-api.us-west-1.amazonaws.com/prod/signup", {
+    // Sending data to API
+    const response = await fetch("https://your-signup-api-endpoint", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ firstName, lastName, email, password }),
     });
 
     if (!response.ok) {
+      // If the API returns an error
       const data = await response.json();
       document.getElementById("signup-error").textContent =
-        data.error || "This email is already in use.";
+        data.error || "Signup failed. Please try again.";
       document.getElementById("signup-error").style.display = "block";
     } else {
+      // Success
       alert("Signup successful! Please log in.");
       window.location.href = "index.html"; // Redirect to login page
     }
   } catch (error) {
     console.error("Signup error:", error);
-    document.getElementById("signup-error").textContent =
-      "An unexpected error occurred. Please try again later.";
-    document.getElementById("signup-error").style.display = "block";
+    document.getElementById("signup-error").textContent = "An unexpected error occurred. Please try again.";
+    document.getElementById("signup-error").style.display = "block"; // Show error message
   }
 });
+
