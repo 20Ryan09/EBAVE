@@ -1,1 +1,60 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header Styling */
+header {
+  background-color: #0074d9; /* Bright blue */
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Main Content */
+main {
+  padding: 2rem;
+}
+
+/* Blog Post Styling */
+.post {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.post-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #0074d9; /* Match header color */
+}
+
+.post-content {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0074d9;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
