@@ -2,30 +2,29 @@
 document.getElementById("login-form")?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const identifier = document.getElementById("loginIdentifier").value;
+  const email = document.getElementById("loginEmail").value; // Now using "email"
   const password = document.getElementById("loginPassword").value;
 
   try {
     const response = await fetch("https://qvwwrhsxva.execute-api.us-west-1.amazonaws.com/prod/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password }), // Sending "email" and "password"
     });
 
     if (!response.ok) {
       const data = await response.json();
       document.getElementById("login-error").textContent =
-        data.error || "Your username/email or password is incorrect.";
-      document.getElementById("login-error").style.display = "block";
+        data.error || "Invalid email or password.";
+      document.getElementById("login-error").style.display = "block"; // Show error
     } else {
       alert("Login successful!");
-      window.location.href = "ebave.html"; // Redirect to home page
+      window.location.href = "ebave.html"; // Redirect to homepage
     }
   } catch (error) {
     console.error("Login error:", error);
-    document.getElementById("login-error").textContent =
-      "An unexpected error occurred. Please try again later.";
-    document.getElementById("login-error").style.display = "block";
+    document.getElementById("login-error").textContent = "An unexpected error occurred. Please try again.";
+    document.getElementById("login-error").style.display = "block"; // Show error
   }
 });
 
