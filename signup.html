@@ -3,64 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up</title>
+  <title>Welcome to Ebave - Sign Up</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div id="container">
     <div id="form-container">
-      <h2>Sign Up</h2>
+      <h2>Welcome to Ebave - Sign Up</h2>
       <form id="signup-form">
         <input type="text" id="firstName" placeholder="First Name" required />
         <input type="text" id="lastName" placeholder="Last Name" required />
         <input type="email" id="email" placeholder="Email Address" required />
         <input type="password" id="password" placeholder="Password" required />
-        <button type="submit">Create Account</button>
         <p id="signup-error" style="color: red; display: none;"></p>
+        <button type="submit">Create Account</button>
         <p>
           Already have an account? <a href="index.html" class="link">Log in!</a>
         </p>
-        <p id="signup-error" style="display:none; color:red;"></p>
       </form>
     </div>
   </div>
   <script src="app.js"></script>
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault(); // Prevent the default form submission
-
-      const formData = new FormData(form);
-      const data = {
-        firstName: formData.get("firstName"),
-        lastName: formData.get("lastName"),
-        email: formData.get("email"),
-        password: formData.get("password"),
-      };
-
-      try {
-        const response = await fetch("https://your-signup-api-endpoint.amazonaws.com/prod", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        });
-
-        if (response.ok) {
-          // If signup is successful, redirect to the homepage
-          window.location.href = "ebave.html";
-        } else {
-          const error = await response.json();
-          alert(`Signup failed: ${error.error || "Unknown error"}`);
-        }
-      } catch (err) {
-        console.error("Error during signup:", err);
-        alert("An unexpected error occurred. Please try again.");
-      }
-    });
-  });
-</script>
-
 </body>
 </html>
