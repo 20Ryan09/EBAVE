@@ -9,7 +9,7 @@ document.getElementById("login-form")?.addEventListener("submit", async (event) 
     const response = await fetch("https://qvwwrhsxva.execute-api.us-west-1.amazonaws.com/prod/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ identifier, password }),
+      body: JSON.stringify({ email, password }),
     });
 
     if (!response.ok) {
