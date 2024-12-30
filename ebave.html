@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Ebave</title>
-  <link rel="stylesheet" href="ebave.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ebave</title>
+  <link rel="stylesheet" href="ebave.css">
 </head>
 <body>
   <header>
-    <h1>Welcome to Ebave</h1>
-    <p>Your hub for insightful blogs and more.</p>
+    <div class="header-container">
+      <h1>Welcome to Ebave</h1>
+      <p>Your community, your stories, your space.</p>
+    </div>
   </header>
+
   <main>
-    <article>
-      <img src="ebave-fam.jpg" alt="Featured Blog Image" />
-      <h2>Blog Title</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
-      <a href="#">Read More</a>
-    </article>
-    <!-- Additional blog entries can be added here -->
+    <section class="intro">
+      <h2>Discover, Share, and Engage</h2>
+      <p>Connect with the EBAVE family, share your favorite moments, and stay up-to-date with meetings and events.</p>
+    </section>
+
+    <section class="features">
+      <div class="feature-card">
+        <img src="placeholder1.jpg" alt="Feature 1" class="feature-img">
+        <h3>EBAVE Family</h3>
+        <p>Share posts, stories, and updates in a private and secure space.</p>
+      </div>
+      <div class="feature-card">
+        <img src="placeholder2.jpg" alt="Feature 2" class="feature-img">
+        <h3>Photos</h3>
+        <p>Create and share albums of precious memories with loved ones.</p>
+      </div>
+      <div class="feature-card">
+        <img src="placeholder3.jpg" alt="Feature 3" class="feature-img">
+        <h3>Chat</h3>
+        <p>Stay connected through instant messaging and notifications.</p>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Join the Community</h2>
+      <button onclick="window.location.href='signup.html'">Sign Up Now</button>
+    </section>
   </main>
+
   <footer>
     <p>&copy; 2024 Ryan Tchouanang | Phone: (725) 324-5259 | Email: tchouanangryan@gmail.com | Instagram: @ryantwt</p>
   </footer>
+
   <script src="ebave.js"></script>
 </body>
 </html>
